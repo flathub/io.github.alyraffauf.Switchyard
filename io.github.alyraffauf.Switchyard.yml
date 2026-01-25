@@ -39,12 +39,12 @@ modules:
         . /usr/lib/sdk/golang/enable.sh
         go build -mod=vendor -trimpath -o switchyard-bin ./src
       - install -Dm755 switchyard-bin /app/bin/switchyard-bin
-      - install -Dm755 data/switchyard-wrapper.sh /app/bin/switchyard
+      - install -Dm755 flatpak/switchyard-wrapper.sh /app/bin/switchyard
       - install -Dm644 data/io.github.alyraffauf.Switchyard.desktop /app/share/applications/io.github.alyraffauf.Switchyard.desktop
       - install -Dm644 data/io.github.alyraffauf.Switchyard.metainfo.xml /app/share/metainfo/io.github.alyraffauf.Switchyard.metainfo.xml
       - install -Dm644 data/icons/hicolor/scalable/apps/io.github.alyraffauf.Switchyard.svg /app/share/icons/hicolor/scalable/apps/io.github.alyraffauf.Switchyard.svg
     sources:
       - type: git
         url: https://github.com/alyraffauf/switchyard
-        tag: v0.10.1
-        commit: 0ceda4aa975f19dad32a23ed80660ef79c916f78
+        tag: v0.11.0
+        commit: f1152297ed5a76065196a4cf1ff26f78ce53b746
