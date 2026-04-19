@@ -1,6 +1,6 @@
 app-id: io.github.alyraffauf.Switchyard
 runtime: org.gnome.Platform
-runtime-version: "49"
+runtime-version: "50"
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.golang
@@ -25,8 +25,8 @@ modules:
       - -Dtests=false
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/glib/2.86/glib-2.86.3.tar.xz
-        sha256: b3211d8d34b9df5dca05787ef0ad5d7ca75dec998b970e1aab0001d229977c65
+        url: https://download.gnome.org/sources/glib/2.88/glib-2.88.0.tar.xz
+        sha256: 3546251ccbb3744d4bc4eb48354540e1f6200846572bab68e3a2b7b2b64dfd07
       - type: patch
         path: build-aux/flatpak/glib-appinfo.patch
 
@@ -46,5 +46,5 @@ modules:
     sources:
       - type: git
         url: https://github.com/alyraffauf/switchyard
-        tag: v0.12.0
-        commit: bc11a527d4f8d3be5b55a1f57a54a0549fe3a769
+        tag: v0.13.0
+        commit: 3424da91a5ec7ffdfea4cbc5e6e3b25b723534bc
