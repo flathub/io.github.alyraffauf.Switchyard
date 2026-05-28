@@ -46,5 +46,5 @@ modules:
     sources:
       - type: git
         url: https://github.com/alyraffauf/switchyard
-        tag: v0.15.0
-        commit: f342f5aa4131daf535e084bc2b82d8e6635651b1
+        tag: v0.15.2
+        commit: 41ad594d59ff980121c3fda48d87a217b2f30911
