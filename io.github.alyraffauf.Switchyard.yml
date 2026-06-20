@@ -34,17 +34,27 @@ modules:
     buildsystem: simple
     build-options:
       append-path: /usr/lib/sdk/golang/bin
+      env:
+        GOROOT: /usr/lib/sdk/golang
+        GOPATH: /run/build/switchyard/go
+        GOMODCACHE: /run/build/switchyard/go/pkg/mod
+        GOCACHE: /run/ccache/go-build-cache
+        GOPROXY: "off"
+        GOSUMDB: "off"
+        CGO_ENABLED: "1"
     build-commands:
       - |
         . /usr/lib/sdk/golang/enable.sh
-        go build -mod=vendor -trimpath -o switchyard-bin ./src
+        mkdir -p "$GOCACHE"
+        go build -mod=mod -modcacherw -trimpath -o switchyard-bin ./src
       - install -Dm755 switchyard-bin /app/bin/switchyard-bin
       - install -Dm755 flatpak/switchyard-wrapper.sh /app/bin/switchyard
       - install -Dm644 data/io.github.alyraffauf.Switchyard.desktop /app/share/applications/io.github.alyraffauf.Switchyard.desktop
       - install -Dm644 data/io.github.alyraffauf.Switchyard.metainfo.xml /app/share/metainfo/io.github.alyraffauf.Switchyard.metainfo.xml
       - install -Dm644 data/icons/hicolor/scalable/apps/io.github.alyraffauf.Switchyard.svg /app/share/icons/hicolor/scalable/apps/io.github.alyraffauf.Switchyard.svg
     sources:
+      - go-modules.json
       - type: git
         url: https://github.com/alyraffauf/switchyard
-        tag: v0.15.2
-        commit: 41ad594d59ff980121c3fda48d87a217b2f30911
+        tag: v0.16.1
+        commit: 2723e624372c44ce69ce94608436b417782cc7b5
