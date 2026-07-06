@@ -46,7 +46,7 @@ modules:
       - |
         . /usr/lib/sdk/golang/enable.sh
         mkdir -p "$GOCACHE"
-        go build -mod=mod -modcacherw -trimpath -o switchyard-bin ./src
+        go build -mod=mod -modcacherw -trimpath -o switchyard-bin ./cmd/switchyard
       - install -Dm755 switchyard-bin /app/bin/switchyard-bin
       - install -Dm755 flatpak/switchyard-wrapper.sh /app/bin/switchyard
       - install -Dm644 data/io.github.alyraffauf.Switchyard.desktop /app/share/applications/io.github.alyraffauf.Switchyard.desktop
@@ -56,5 +56,5 @@ modules:
       - go-modules.json
       - type: git
         url: https://github.com/alyraffauf/switchyard
-        tag: v0.16.3
-        commit: 652c8083362001ec5eef6f69d64dd8fef30a7b0e
+        tag: v0.17.0
+        commit: 6353bdc668eacfc88761fdd25c14812391af8d05
