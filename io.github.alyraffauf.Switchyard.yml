@@ -56,5 +56,5 @@ modules:
       - go-modules.json
       - type: git
         url: https://github.com/alyraffauf/switchyard
-        tag: v0.18.1
-        commit: 724cf50280f1a6322e6993e2e9dad2ab1349f461
+        tag: v0.18.2
+        commit: d2c2cc412c779d958e1d7a11a788447b0b516168
